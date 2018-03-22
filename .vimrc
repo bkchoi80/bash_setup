@@ -1,31 +1,31 @@
-execute pathogen#infect()
-execute pathogen#helptags()
-
-filetype plugin on
-filetype indent on
-syntax enable
-colorscheme peaksea
-
-set background=dark
-set number
-set encoding=utf-8
 set nocompatible
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set ts=8
-set colorcolumn=81
-set laststatus=2 
-set noshowmode
+filetype off
 
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabClosePreviewOnPopupClose = 1
-let g:r_syntax_folding = 1
-let g:syntastic_java_checkers=['javac']
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Bundle 'edkolev/tmuxline.vim'
+call vundle#end()
 
-highlight Pmenu ctermbg=238 gui=bold
-highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+filetype plugin indent on
+syntax on
 
-au FileType python setlocal expandtab shiftwidth=4 softtabstop=4 foldmethod=indent foldlevel=0 
-au FileType java setlocal noexpandtab shiftwidth=8 softtabstop=8
-autocmd BufRead,BufNewFile *.hql set filetype=sql
+colorscheme gruvbox
+set background=dark
+set noshowmode laststatus=2
+let g:tmuxline_powerline_separators=0
+
+set colorcolumn=80
+set number
+
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
