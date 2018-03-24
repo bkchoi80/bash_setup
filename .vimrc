@@ -24,6 +24,7 @@ let g:tmuxline_powerline_separators=0
 
 set colorcolumn=80
 set number
+set backspace=2
 
 set undofile
 set undodir=$HOME/.vim/undo
